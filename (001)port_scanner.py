@@ -33,7 +33,6 @@ BANNER = r"""
 
 def print_banner():
     print(BANNER)
-    print(f"    [{VERSION}] - port_scanner")
     print(f"    Escaner de puertos TCP con banner grabbing")
     print(f"    " + "-" * 45 + "\n")
 
