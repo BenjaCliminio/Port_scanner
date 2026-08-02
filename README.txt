@@ -63,8 +63,3 @@ Export a CSV con puertos específicos:
 ```bash
 python port_scanner.py scanme.nmap.org --ports 22,80,443 --output resultado.csv
 ```
-
-
-## Licencia
-
-MIT
