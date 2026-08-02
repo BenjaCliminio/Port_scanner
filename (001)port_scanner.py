@@ -19,6 +19,25 @@ PROBES = {
     443: b"",  # HTTPS requeriría TLS; se deja vacío a propósito
 }
 
+VERSION = "001"
+
+BANNER = r"""
+   ___            _     _____                                 
+  / _ \___  _ __ | |_  /  ___|  ___ __ _ _ __  _ __   ___ _ __ 
+ / /_)/ _ \| '__|| __| \ `--. / __/ _` | '_ \| '_ \ / _ \ '__|
+/ ___/ (_) | |   | |_   `--. \ (_| (_| | | | | | | |  __/ |   
+\/    \___/|_|    \__| /\__/ /\___\__,_|_| |_|_| |_|\___|_|   
+
+"""
+
+
+def print_banner():
+    print(BANNER)
+    print(f"    [{VERSION}] - port_scanner")
+    print(f"    Escaner de puertos TCP con banner grabbing")
+    print(f"    " + "-" * 45 + "\n")
+
+
 print_lock = threading.Lock()
 results = []
 results_lock = threading.Lock()
@@ -81,6 +100,8 @@ def scan_port(host, port, timeout):
 
 
 def main():
+    print_banner()
+
     parser = argparse.ArgumentParser(
         description="Escáner de puertos y banners"
     )
